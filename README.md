@@ -24,9 +24,11 @@ app.
   - `TweakLog.swift` — file + `NSLog` logger (USB-pullable log file).
   - `HookActivator.swift` — version-independent Orion `HookGroup` activation
     guarded by runtime class/selector presence checks.
-- **`scripts/`** — IPA packaging + release helpers (generalized: app name,
-  bundle id, filter passed in). *Being ported from spotify-pro-ios; see the repo
-  status.*
+- **`scripts/`** — IPA packaging + release helpers, generalized (app name /
+  bundle id / tweak name passed in): `package-ipa.sh` (cyan inject + ipapatch +
+  `patch_ipa.py`), `build-zxpi.sh` (builds `zxPluginsInject.dylib`), `compat.py`
+  (version/release tagging from `compatibility.json`), `publish_release.sh`
+  (GitHub Release), `make-altstore-source.py` (AltStore `apps.json`).
 
 ## Consuming it from a tweak
 
@@ -57,8 +59,8 @@ it. A consuming tweak adds both as sibling submodules.
 
 ## Status
 
-- `zxPluginsInject`, `tools/objcinventory.py`, and `swift/Shared/` are in place.
-- `scripts/` are being ported/generalized from `spotify-pro-ios`.
+- `zxPluginsInject`, `tools/objcinventory.py`, `swift/Shared/`, and `scripts/`
+  are in place.
 - `MIGRATING-SPOTIFY.md` describes repointing `spotify-pro-ios` at this kit.
 
 ## License
